@@ -14,7 +14,7 @@ var h = 100,
 
 function preload() {
   backPic = loadImage("assets/body2.jpg");
-  table2 = loadTable("assets/nss2-18.tsv", "tsv", "header");
+  table2 = loadTable("assets/nss2-3.tsv", "tsv", "header");
 }
 
 function setup() {
@@ -23,7 +23,6 @@ function setup() {
   total = table2.getRowCount();
   ages = table2.getColumn("age");
   body = table2.getColumn("body_part");
-
 
 
   // console.log(body);
@@ -76,7 +75,8 @@ function draw() {
 
 
   createCanvas(620, 380);
-  background(0, 0, 360, 20);
+  // background(0, 0, 360);
+  background(280, 80, 60,300);
   image(backPic, 0, 0);
 
   //drawing dots
@@ -359,70 +359,87 @@ function draw() {
 
   //drawing lines
 
-  // strokeWeight(0.2);
+  strokeWeight(0.5);
 
-  // stroke(m - (head / body.length) * h, s, b);
-  // // console.log((head / body.length) * h);
-  // line(x - 10, y + 40, x + 10, y + 40);
-
-  // stroke(m - (eyeball / body.length) * h, s, b);
-  // line(x - 5, y + 42, x + 5, y + 42);
-
-
-  // stroke(m - (ear / body.length) * h, s, b);
-  // line(x - 12, y + 52, x + 12, y + 52);
-
-
-
-  // stroke(m - (face / body.length) * h, s, b);
-  // line(x - 6, y + 54, x + 6, y + 54);
-
-
-  // stroke((mouth / body.length) * h, s, b);
-  // line(x - 2, y + 58, x + 2, y + 58);
-
-  // stroke(m - (neck / body.length) * h, s, b);
-  // line(x - 10, y + 62, x + 10, y + 62);
-
-
-  // stroke(m - (shoulder / body.length) * h, s, b);
-  // line(x - 20, y + 72, x + 20, y + 72);
-
-
-  // stroke(m - (upperArm / body.length) * h, s, b);
-  // line(x - 40, y + 92, x + 40, y + 92);
-
-
-  // stroke(m - (upperTrunk / body.length) * h, s, b);
-  // line(x - 20, y + 92, x + 20, y + 92);
+  stroke(m - (head / body.length) * h, s, b);
+  line(x - 10, y + 40, x - 3, y + 38);
+  line(x + 10, y + 40, x + 3, y + 38);
+  line(x - 6, y + 36, x - 7, y + 32);
+  line(x + 6, y + 36, x + 7, y + 32);
+  line(x, y + 34, x, y + 30);
+  line(x, y + 30, x - 10, y + 40);
+  line(x, y + 30, x + 10, y + 40);
+  line(x, y + 30, x - 7, y + 32);
+  line(x, y + 30, x + 7, y + 32);
+  line(x - 10, y + 40, x - 7, y + 32);
+  line(x + 10, y + 40, x + 7, y + 32);
+  line(x, y + 30, x, y + 34);
+  line(x, y + 34, x - 3, y + 38);
+  line(x, y + 34, x + 3, y + 38);
 
 
 
-  // stroke(m - (elbow / body.length) * h, s, b);
-  // line(x - 50, y + 122, x + 50, y + 122);
+  stroke(m - (eyeball / body.length) * h, s, b);
+  line(x - 5, y + 42, x + 5, y + 42);
 
 
-  // stroke(m - (lowerTrunk / body.length) * h, s, b);
-  // line(x - 10, y + 122, x + 10, y + 122);
+  stroke(m - (ear / body.length) * h, s, b);
+  line(x - 12, y + 52, x - 12, y + 44);
+  line(x + 12, y + 52, x + 12, y + 44);
+  line(x - 12, y + 52, x - 12, y + 50);
+  line(x + 12, y + 52, x + 12, y + 50);
 
 
-  // stroke(m - (upperArm / body.length) * h, s, b);
-  // line(x - 60, y + 142, x + 60, y + 142);
+  stroke(m - (face / body.length) * h, s, b);
+  line(x - 10, y + 40, x - 12, y + 44);
+  line(x + 10, y + 40, x + 12, y + 44);
 
 
-  // stroke(m - (wrist / body.length) * h, s, b);
-  // line(x - 64, y + 164, x + 64, y + 164);
+  stroke((mouth / body.length) * h, s, b);
+  line(x - 2, y + 58, x + 2, y + 58);
+
+  stroke(m - (neck / body.length) * h, s, b);
+  line(x - 10, y + 62, x + 10, y + 62);
 
 
-  // stroke(m - (hand / body.length) * h, s, b);
-  // line(x - 64, y + 180, x + 64, y + 180);
-
-  // stroke(m - (finger / body.length) * h, s, b);
-  // line(x - 52, y + 192, x + 52, y + 192);
+  stroke(m - (shoulder / body.length) * h, s, b);
+  line(x - 20, y + 72, x + 20, y + 72);
 
 
-  // stroke(m - (upperLeg / body.length) * h, s, b);
-  // line(x - 52, y + 192, x + 52, y + 192);
+  stroke(m - (upperArm / body.length) * h, s, b);
+  line(x - 40, y + 92, x + 40, y + 92);
+
+
+  stroke(m - (upperTrunk / body.length) * h, s, b);
+  line(x - 20, y + 92, x + 20, y + 92);
+
+
+
+  stroke(m - (elbow / body.length) * h, s, b);
+  line(x - 50, y + 122, x + 50, y + 122);
+
+
+  stroke(m - (lowerTrunk / body.length) * h, s, b);
+  line(x - 10, y + 122, x + 10, y + 122);
+
+
+  stroke(m - (upperArm / body.length) * h, s, b);
+  line(x - 60, y + 142, x + 60, y + 142);
+
+
+  stroke(m - (wrist / body.length) * h, s, b);
+  line(x - 64, y + 164, x + 64, y + 164);
+
+
+  stroke(m - (hand / body.length) * h, s, b);
+  line(x - 64, y + 180, x + 64, y + 180);
+
+  stroke(m - (finger / body.length) * h, s, b);
+  line(x - 52, y + 192, x + 52, y + 192);
+
+
+  stroke(m - (upperLeg / body.length) * h, s, b);
+  line(x - 52, y + 192, x + 52, y + 192);
 
 
 
